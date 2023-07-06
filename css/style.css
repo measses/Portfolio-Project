@@ -42,6 +42,11 @@ body{
     justify-content: space-between; /* Sağa ve sola yaslar */
     align-items: center;
     z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky{
+    background: var(--bg-color);
 }
 
 .logo {
@@ -600,4 +605,83 @@ span{
 
 .contact form .btn-box.btns .btn{
     cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before{
+width: 100%;
+}
+
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
+.footer-iconTop a:hover i{
+    color: var(--main-color);
+
+}
+
+
+.cursor-effect {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00abf0;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 171, 240, 0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: cursorEffect 0.5s linear;
+  z-index: 9999;
+}
+
+@keyframes cursorEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
 }
