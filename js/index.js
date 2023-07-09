@@ -18,6 +18,8 @@ let sections = document.querySelectorAll("section");
 let navLinks= document.querySelectorAll("header nav a");
 window.onscroll = () => {
 
+  
+
   sections.forEach(sec => {
     let top = window.scrollY;
     let offset = sec.offsetTop - 100;
@@ -51,3 +53,37 @@ document.addEventListener('click', function(event) {
     }, 200);
   });
 
+
+  window.onload = function() {
+    ScrollReveal().reveal('.home-content', {
+        duration: 1300,    
+        distance: '20px',  
+        origin: 'left',  
+    });
+    ScrollReveal().reveal('.home-sci', {
+      duration: 1400,   
+      distance: '20px',  
+      origin: 'bottom',  
+  });
+  ScrollReveal().reveal('.about', {
+    duration: 1400,   
+    distance: '20px',  
+    origin: 'top',  
+});
+ScrollReveal().reveal('.education', {
+  duration: 1400,   
+  distance: '20px',  
+  origin: 'left',  
+});
+ScrollReveal().reveal('.skills', {
+  duration: 1400,   
+  distance: '25px',  
+  origin: 'right',  
+});
+ScrollReveal().reveal('.contact', {
+  duration: 1400,   
+  distance: '25px',  
+  origin: 'bottom',  
+});
+  
+};

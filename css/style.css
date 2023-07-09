@@ -236,6 +236,7 @@ section{
     width: 170px;
     display: flex;
     justify-content: space-between;
+    gap: .60rem;
 }
 
 .home-sci a{
@@ -336,7 +337,8 @@ section{
     border-top: .2rem solid var(--second-bg-color);
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
-    border-right: .2rem solid var(--main-color)
+    border-right: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content{
@@ -925,5 +927,14 @@ width: 100%;
     75%,
     81%{
         opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner{
+    0%{
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
