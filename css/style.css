@@ -97,6 +97,7 @@ section{
 
 .home-content{
     max-width: 60rem;
+    z-index: 99;
 }
 
 .home-content h1{
@@ -105,6 +106,12 @@ section{
     line-height: 1.2;
 
 }
+
+.home-content h1 span{
+    color: var(--text-color);
+}
+
+
 .home-content .text-animate{
     font-size: 5rem;
 
@@ -120,7 +127,26 @@ section{
     line-height: 1.4;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -33rem 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 2s;
     
+}
+
+.home-content .text-animate h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 2s;
 }
 
 .home-content p{
@@ -684,4 +710,220 @@ width: 100%;
     transform: translate(-50%, -50%) scale(1.5);
     opacity: 0;
   }
+}
+
+
+/*breakpoints*/
+
+@media(max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+
+@media screen and (max-width: 1586px) {
+    .education-column {
+      width: calc(100% / 3);
+      float: left;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    .section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+  }
+
+
+  @media screen and (max-width: 966px) {
+    .home {
+      background-image: none;
+    }
+  }
+
+  
+
+  @media screen and (max-width: 957px) {
+    .header{
+        background: var(--bg-color);
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        transition: .20s ease;
+        transition-delay: .20s;
+    }
+
+    .navbar.active{
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar .active-nav{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .20s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: .20s;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transform:  translateX(-20rem);
+        transition: .20s ease;
+        transition-delay: 0s;
+
+    }
+
+    .navbar.active a{
+        transform:  translateX(0);
+        transition-delay: .20s;
+    }
+
+    .home-imgHover{
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+@media screen and (max-width: 523px) {
+    html{
+        font-size: 60%;
+    }
+
+    .home-content h1{
+        display: flex;
+        flex-direction: column ;
+        font-size: 4rem;
+    }
+    .home-sci{
+        width: 160px;
+    }
+
+    .home-sci a{
+        width: 38px;
+        height: 38px;
+    }
+
+
+
+}   
+@media screen and (max-width: 756px) {
+   
+
+    .home-content p{
+        display: flex;
+        flex-direction: column ;
+        max-width: 80%;
+        font-size: 2rem;
+    } 
+
+   
+}
+
+@media screen and (max-width: 489px) {
+    .education{
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field{
+        width: 100%;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 511px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+}
+
+/* Animation */
+
+@keyframes homeBgText{
+    0%,
+    10%,
+    100%{
+        background-position: -33rem 0;
+    }
+    65%,
+    85%{
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText{
+    0%,
+    10%,
+    100%{
+       width: 0;
+    }
+    65%,
+    78%,
+    85%{
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81%{
+        opacity: 0;
+    }
 }
