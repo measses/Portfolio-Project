@@ -769,7 +769,7 @@ width: 100%;
   }
 
 
-  @media screen and (max-width: 1354px) {
+  @media screen and (max-width: 1030px) {
     .home {
       background-image: none;
     }
@@ -1029,7 +1029,7 @@ width: 100%;
   }
   
   .service-card {
-    width: 22%;
+    width: 23%;
     border: solid 1px var(--second-bg-color);
     background-color: transparent;
     padding: 20px;
@@ -1100,3 +1100,19 @@ width: 100%;
       padding: 20px;
     }
   }
+
+ .about-content i{
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.btn-box i{
+    font-size: 20px;
+    margin-left: 5px;
+
+}
+
+.education-box i{
+    font-size: 18px;
+    margin-right: 3px;
+}
