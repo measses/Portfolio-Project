@@ -390,6 +390,25 @@ section{
     border-left: .2rem solid var(--main-color);
 }
 
+.education-column .education-content .content a {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    text-decoration: none;
+    color: #00abf0;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .education-column .education-content .content a:hover {
+    background-color: #00abf0;
+    color: #ffffff;
+    border-color: #00abf0;
+  }
+  
+
+
 .education-box .education-content{
     position: relative;
     padding-left: 2rem;
@@ -750,7 +769,7 @@ width: 100%;
   }
 
 
-  @media screen and (max-width: 966px) {
+  @media screen and (max-width: 1354px) {
     .home {
       background-image: none;
     }
@@ -938,3 +957,146 @@ width: 100%;
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+
+
+  
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: modalOpenAnimation 0.5s ease-out;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+  }
+  
+  input[readonly] {
+    border: 2px solid #00abf0;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @keyframes modalOpenAnimation {
+    0% {
+      transform: translateY(-100%);
+     
+    }
+    100% {
+      transform: translateY(0);
+     
+    }
+  }
+  
+  
+  .services {
+    text-align: center;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .service-card {
+    width: 22%;
+    border: solid 1px var(--second-bg-color);
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .service-card h3 {
+    color:var(--main-color);
+    margin-top: 10px;
+    font-size: 1.6rem;
+  }
+  
+  .service-card p {
+    color: var(--text-color);
+    margin-top: 10px;
+    font-size: 1.35rem;
+  }
+  
+  .contact-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-btn:hover {
+    background-color: #0078ad;
+  }
+  .services {
+    border-top: 1px solid #000; /* Üst çizgi ekle */
+    border-bottom: 1px solid #053a90; /* Alt çizgi ekle */
+  }
+  
+  .services-container{
+    margin-top: 100px;
+}
+
+  
+/* Sadece 1201px'e kadar iki sütuna düşür */
+@media screen and (max-width: 1201px) {
+    .service-card {
+      width: calc(50% - 10px); /* Sütunların arasına 10px boşluk bırak */
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  }
+  
+  /* Sadece 750px'e kadar tek sütun haline getir */
+  @media screen and (max-width: 750px) {
+    .service-card {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  }
