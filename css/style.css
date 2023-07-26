@@ -777,9 +777,9 @@ width: 100%;
   }
 
 /*home contact*/
-  @media screen and(max-width: 400px){
+  @media screen and(max-width: 430px){
     .home-sci a{
-        margin-bottom:15px;
+        margin-top:20px;
     }
 }
 
