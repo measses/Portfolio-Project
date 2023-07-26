@@ -39,7 +39,9 @@ function smtp_mailer($to, $subject, $msg)
     if (!$mail->Send()) {
         echo $mail->ErrorInfo;
     } else {
-        return 'Sent';
+        header('Location: index.html');
+        exit;
+
     }
 }
 ?>
