@@ -239,7 +239,7 @@ section{
     gap: .60rem;
 }
 
-/*.home-sci a{
+.home-sci a{
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -255,7 +255,7 @@ section{
     overflow: hidden;
     transition: .5s;
 }
-*/
+
 
 .home-sci a:hover{
     color: var(--bg-color);
@@ -776,7 +776,12 @@ width: 100%;
     }
   }
 
-  
+/*home contact*/
+  @media screen and(max-width: 400px){
+    .home-sci a{
+        margin-bottom:15px;
+    }
+}
 
   @media screen and (max-width: 957px) {
     .header{
