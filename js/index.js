@@ -105,5 +105,35 @@ window.onload = function() {
   
 }
 
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Formun normal submit işlemini engelle
 
+  // Form verilerini al
+  var formData = new FormData(event.target);
+
+  // XMLHttpRequest nesnesini oluştur
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('POST', 'send-email.php', true);
+  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  // Gönderilen verilere göre işlem başarılıysa ve başarısızsa yapılacak işlemler
+  xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      alert('E-posta başarıyla gönderildi!');
+      // Başarı durumunda başka işlemler yapabilirsiniz
+    } else {
+      alert('E-posta gönderilemedi. Hata: ' + xhr.statusText);
+      // Başarısız durumda başka işlemler yapabilirsiniz
+    }
+  };
+
+  xhr.onerror = function() {
+    alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+    // İsteğin gönderilemediği durumda yapılacak işlemler
+  };
+
+  // Form verilerini gönder
+  xhr.send(new URLSearchParams(formData));
+});
 
