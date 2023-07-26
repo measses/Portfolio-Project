@@ -105,35 +105,32 @@ window.onload = function() {
   
 }
 
-document.getElementById('myForm').addEventListener('submit', function(event) {
+document.getElementById('emailForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Formun normal submit işlemini engelle
 
-  // Form verilerini al
-  var formData = new FormData(event.target);
+  var form = event.target;
+  var formData = new FormData(form);
 
-  // XMLHttpRequest nesnesini oluştur
   var xhr = new XMLHttpRequest();
-
   xhr.open('POST', 'send-email.php', true);
-  xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-  // Gönderilen verilere göre işlem başarılıysa ve başarısızsa yapılacak işlemler
   xhr.onload = function() {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      alert('E-posta başarıyla gönderildi!');
-      // Başarı durumunda başka işlemler yapabilirsiniz
-    } else {
-      alert('E-posta gönderilemedi. Hata: ' + xhr.statusText);
-      // Başarısız durumda başka işlemler yapabilirsiniz
-    }
+      if (xhr.status === 200) {
+          // İsteğin başarılı olduğu durum
+          document.getElementById('result-message').innerHTML = 'E-posta başarıyla gönderildi!';
+      } else {
+          // İsteğin başarısız olduğu durum
+          document.getElementById('result-message').innerHTML = 'E-posta gönderilemedi. Hata: ' + xhr.statusText;
+      }
   };
 
   xhr.onerror = function() {
-    alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
-    // İsteğin gönderilemediği durumda yapılacak işlemler
+      // İsteğin tamamen başarısız olduğu durum
+      document.getElementById('result-message').innerHTML = 'E-posta gönderilemedi. Sunucu hatası.';
   };
 
-  // Form verilerini gönder
-  xhr.send(new URLSearchParams(formData));
+  var params = new URLSearchParams(formData).toString();
+  xhr.send(params);
 });
 
