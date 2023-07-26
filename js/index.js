@@ -105,32 +105,4 @@ window.onload = function() {
   
 }
 
-document.getElementById('emailForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Formun normal submit işlemini engelle
-
-  var form = event.target;
-  var formData = new FormData(form);
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'send-email.php', true);
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-  xhr.onload = function() {
-      if (xhr.status === 200) {
-          // İsteğin başarılı olduğu durum
-          document.getElementById('result-message').innerHTML = 'E-posta başarıyla gönderildi!';
-      } else {
-          // İsteğin başarısız olduğu durum
-          document.getElementById('result-message').innerHTML = 'E-posta gönderilemedi. Hata: ' + xhr.statusText;
-      }
-  };
-
-  xhr.onerror = function() {
-      // İsteğin tamamen başarısız olduğu durum
-      document.getElementById('result-message').innerHTML = 'E-posta gönderilemedi. Sunucu hatası.';
-  };
-
-  var params = new URLSearchParams(formData).toString();
-  xhr.send(params);
-});
 
