@@ -170,7 +170,7 @@ section{
     justify-content: center;
     align-items: center;
     width: 15rem;
-    top: 20px;
+   
     height: 100%;
     background: var(--main-color);
     border: .2rem solid var(--main-color);
@@ -245,6 +245,7 @@ section{
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    top: 20px;
     width: 40px;
     height: 40px;
     background: transparent;
