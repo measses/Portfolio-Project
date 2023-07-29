@@ -244,7 +244,6 @@ section{
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    top: 20px;
     width: 40px;
     height: 40px;
     background: transparent;
@@ -256,7 +255,6 @@ section{
     overflow: hidden;
     transition: .5s;
 }
-
 
 .home-sci a:hover{
     color: var(--bg-color);
@@ -736,85 +734,6 @@ width: 100%;
 }
 
 
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-/* Sadece 1201px'e kadar iki sütuna düşür */
-@media screen and (max-width: 1201px) {
-.service-card {
-width: calc(50% - 10px); /* Sütunların arasına 10px boşluk bırak */
-margin-bottom: 20px;
-padding: 20px;
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-.cards-wrapper {
-grid-template-columns: 1fr 1fr;
-}
-}
-
-/* Sadece 750px'e kadar tek sütun haline getir */
-@media screen and (max-width: 750px) {
-.service-card {
-width: 100%;
-margin-bottom: 20px;
-padding: 20px;
-
-
-
-
-		
-
-
-
-
 /*breakpoints*/
 
 @media(max-width: 1200px){
@@ -856,12 +775,7 @@ padding: 20px;
     }
   }
 
-/*home contact*/
-@media screen and (max-width: 430px) {
-    .home-sci a {
-        margin-top: 20px;
-    }
-}
+  
 
   @media screen and (max-width: 957px) {
     .header{
@@ -1001,9 +915,6 @@ padding: 20px;
     }
 
 }
-
-
-
 
 /* Animation */
 
@@ -1172,7 +1083,24 @@ padding: 20px;
 }
 
   
-  /* İcons */
+/* Sadece 1201px'e kadar iki sütuna düşür */
+@media screen and (max-width: 1201px) {
+    .service-card {
+      width: calc(50% - 10px); /* Sütunların arasına 10px boşluk bırak */
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  }
+  
+  /* Sadece 750px'e kadar tek sütun haline getir */
+  @media screen and (max-width: 750px) {
+    .service-card {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+  }
+
  .about-content i{
     font-size: 25px;
     margin-right: 5px;
