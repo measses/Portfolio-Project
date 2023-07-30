@@ -108,20 +108,22 @@ window.onload = function() {
 
 const btn = document.querySelector('.btn');
 
-    document.getElementById('form').addEventListener('submit', function(event) {
-      event.preventDefault();
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault();
 
-      btn.textContent = 'Sending...';
+  btn.textContent = 'Sending...';
 
-      const serviceID = 'default_service'; // E-posta hizmetinizin ID'sini buraya ekleyin
-      const templateID = 'template_uo9fxwu'; // E-posta şablonunuzun ID'sini buraya ekleyin
+  const serviceID = 'default_service'; // E-posta hizmetinizin ID'sini buraya ekleyin
+  const templateID = 'template_uo9fxwu'; // E-posta şablonunuzun ID'sini buraya ekleyin
 
-      emailjs.sendForm(serviceID, templateID, this)
-        .then(() => {
-          btn.textContent = 'Send Email';
-          alert('Sent!');
-        }, (err) => {
-          btn.textContent = 'Send Email';
-          alert(JSON.stringify(err));
-        });
+  emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.textContent = 'Send Email';
+      toastr.success('E-posta başarıyla gönderildi!');
+    })
+    .catch((err) => {
+      btn.textContent = 'Send Email';
+      toastr.error('E-posta gönderirken bir hata oluştu.');
+      console.error(err);
     });
+});
