@@ -107,30 +107,33 @@ window.onload = function() {
 
 
  
- toastr.options = {
-  positionClass: 'toast-bottom-center', 
-  closeButton: true, 
-};
 
-const btn = document.querySelector('.btn');
+  toastr.options = {
+    positionClass: 'toast-bottom-center',
+    closeButton: true, 
+  };
 
-document.getElementById('form').addEventListener('submit', function(event) {
-  event.preventDefault();
+  const submitBtn = document.getElementById('submitBtn');
+  const form = document.getElementById('form');
 
-  btn.textContent = 'Sending...';
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  const serviceID = 'default_service'; 
-  const templateID = 'template_uo9fxwu'; 
+    submitBtn.classList.add('loading'); 
 
-  emailjs.sendForm(serviceID, templateID, this)
-    .then(() => {
-      btn.textContent = 'Send Email';
-      toastr.success('E-posta başarıyla gönderildi!');
-      this.reset(); // Form temizle
-    })
-    .catch((err) => {
-      btn.textContent = 'Send Email';
-      toastr.error('E-posta gönderirken bir hata oluştu.');
-      console.error(err);
-    });
-});
+    const serviceID = 'default_service';
+    const templateID = 'template_uo9fxwu'; 
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        toastr.success('E-posta başarıyla gönderildi!');
+        this.reset(); // Form temizle
+      })
+      .catch((err) => {
+        toastr.error('E-posta gönderirken bir hata oluştu.');
+        console.error(err);
+      })
+      .finally(() => {
+        submitBtn.classList.remove('loading');
+      });
+  });
