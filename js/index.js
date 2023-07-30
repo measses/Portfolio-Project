@@ -89,21 +89,6 @@ ScrollReveal().reveal('.contact', {
 };
 
 
-window.onload = function() {
-  const openModalBtn = document.getElementById('openModalBtn');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-  const modalOverlay = document.getElementById('modalOverlay');
-  
-  openModalBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    modalOverlay.style.display = 'flex';
-  });
-  
-  closeModalBtn.addEventListener('click', function() {
-    modalOverlay.style.display = 'none';
-  });
-  
-}
 
 
  
