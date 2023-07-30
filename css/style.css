@@ -1120,9 +1120,3 @@ width: 100%;
     margin-right: 3px;
 }
 
-/* Eğer ekran 509px'den büyükse yan yana göster */
-@media (max-width: 510px) {
-    .home-sci a {
-      margin-right: 10px;
-    }
-  }
