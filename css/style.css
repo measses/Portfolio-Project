@@ -241,6 +241,7 @@ section{
 }
 
 .home-sci a{
+    display: flex;
     position: relative;
     display: inline-flex;
     justify-content: center;
