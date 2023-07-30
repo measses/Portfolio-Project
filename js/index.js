@@ -106,6 +106,11 @@ window.onload = function() {
 }
 
 
+toastr.options = {
+  positionClass: 'toast-top-center', // Bildirimin ekranın üst ortasında gösterilmesini sağlar
+  closeButton: true, // Kapatma düğmesi gösterilsin
+};
+
 const btn = document.querySelector('.btn');
 
 document.getElementById('form').addEventListener('submit', function(event) {
@@ -113,13 +118,14 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
   btn.textContent = 'Sending...';
 
-  const serviceID = 'default_service'; // E-posta hizmetinizin ID'sini buraya ekleyin
-  const templateID = 'template_uo9fxwu'; // E-posta şablonunuzun ID'sini buraya ekleyin
+  const serviceID = 'default_service'; 
+  const templateID = 'template_uo9fxwu'; 
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.textContent = 'Send Email';
       toastr.success('E-posta başarıyla gönderildi!');
+      this.reset();
     })
     .catch((err) => {
       btn.textContent = 'Send Email';
