@@ -106,9 +106,10 @@ window.onload = function() {
 }
 
 
-toastr.options = {
-  positionClass: 'toast-top-center', // Bildirimin ekranın üst ortasında gösterilmesini sağlar
-  closeButton: true, // Kapatma düğmesi gösterilsin
+ 
+ toastr.options = {
+  positionClass: 'toast-bottom-center', 
+  closeButton: true, 
 };
 
 const btn = document.querySelector('.btn');
@@ -125,7 +126,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     .then(() => {
       btn.textContent = 'Send Email';
       toastr.success('E-posta başarıyla gönderildi!');
-      this.reset();
+      this.reset(); // Form temizle
     })
     .catch((err) => {
       btn.textContent = 'Send Email';
