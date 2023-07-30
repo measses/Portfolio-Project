@@ -1120,3 +1120,20 @@ width: 100%;
     margin-right: 3px;
 }
 
+/* Eğer ekran 509px'den büyükse yan yana göster */
+@media (min-width: 510px) {
+    .home-sci a {
+      margin-right: 10px;
+    }
+  }
+  
+  /* 509px'den küçük ekranlarda dikey düzene geç */
+  @media (max-width: 509px) {
+    .home-sci {
+      flex-direction: column;
+    }
+  
+    .home-sci a {
+      margin-bottom: 10px;
+    }
+  }
