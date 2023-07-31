@@ -100,12 +100,13 @@ section{
     z-index: 99;
 }
 
-.home-content h1{
+.home-content h1 {
     font-size: 5rem;
     font-weight: 700;
     line-height: 1.2;
-
+    margin-bottom: 2rem; 
 }
+
 
 .home-content h1 span{
     color: var(--text-color);
@@ -280,6 +281,9 @@ section{
     width: 100%;
 }
 
+.home-sci, .btn-box {
+    display: flex;
+}
 
 
 .about{
@@ -901,7 +905,7 @@ width: 100%;
     }
 
     .home-content h1{
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
 }
