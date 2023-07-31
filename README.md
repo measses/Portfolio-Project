@@ -1,7 +1,7 @@
 
 # Portfolio-Project
 
-Bu proje,  portföyümü sergilemek amacıyla oluşturulmuş bir web sitesidir. Projede HTML, CSS, Javascript ve pHp kullandım.
+Bu proje,  portföyümü sergilemek amacıyla oluşturulmuş bir web sitesidir. Projede HTML, CSS, Javascript kullandım.
 
 ## Kurulum
 Aşağıdaki adımları takip ederek projeyi yerel makinenize klonlayın ve çalıştırın:
