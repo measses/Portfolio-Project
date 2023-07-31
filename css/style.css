@@ -846,7 +846,7 @@ width: 100%;
     .home-content h1{
         display: flex;
         flex-direction: column ;
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     .home-sci{
         width: 160px;
@@ -905,7 +905,7 @@ width: 100%;
     }
 
     .home-content h1{
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
 }
